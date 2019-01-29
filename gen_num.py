@@ -11,10 +11,14 @@ def main():
         with open(filename, 'w+') as file:
             for index in range(total):
                 file.write(str(random.randint(rand_from, rand_to)) + ' ')
+            print 'generate done'
     except IOError:
         print "Error opening or writing file: ", filename
         sys.exit()
 
 if __name__ == '__main__':
-    import profile
-    profile.run("main()")
+    if sys.argv.count('--profile') > 0:
+        import profile
+        profile.run('main()')
+    else:
+        main()
