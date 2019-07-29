@@ -1,5 +1,5 @@
 import random
-import sys
+import sy
 
 total = 20
 rand_from = 0
